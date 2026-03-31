@@ -55,6 +55,14 @@ controller/ → service/ → repository/ → MongoDB
 | GET/PUT/DELETE | `/api/consultations/{id}` | Détail / modification / suppression |
 | GET | `/api/consultations/statut/{statut}` | Filtrer par statut |
 
+## Skill MongoDB
+
+Un skill MongoDB est installé dans `.agents/skills/mongodb/` (symlink Claude Code dans `.claude/skills/`).
+Il fournit des références sur : conception de schémas, requêtes, pipelines d'agrégation, indexation, transactions et performances.
+Consulter `.agents/skills/mongodb/SKILL.md` pour les exemples de code (driver natif, Mongoose, Atlas).
+
+> **Note** : le skill cible Mongoose/driver natif Node.js. Dans ce projet, l'accès MongoDB se fait via **Spring Data MongoDB** — les patterns restent les mêmes (embed vs référence, index, agrégation) mais la syntaxe est Java/Spring.
+
 ## Points clés d'implémentation
 
 - Lombok (`@Data`, `@Builder`, `@RequiredArgsConstructor`) est utilisé massivement — ne pas écrire les getters/setters manuellement.
