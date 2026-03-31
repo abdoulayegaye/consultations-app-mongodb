@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: consultations-app-mongodb
+  mongodb:
+    # Si Docker avec authentification :
+    # uri: mongodb://admin:admin123@localhost:27017/consultations_db?authSource=admin
+    # Si installation native sans auth :
+    uri: mongodb://localhost:27017/consultations_db
+
+server:
+  port: 8085
+
+logging:
+  level:
+    org.springframework.data.mongodb: DEBUG  # Voir les requêtes Mongo
